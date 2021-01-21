@@ -17,6 +17,9 @@
     </fieldset>
   </form>
 
+  <!-- 2ème méthode d'appel de page  -->
+  <a href="user.php?firstname=riri&lastname=fifi">test</a>
+
   <script>
       document.getElementById("razButton").addEventListener("click", function(){
         // Remet les valeurs initiales

@@ -13,8 +13,7 @@
       echo "Bonjour " . $_POST['civility'] . " " . $_POST['firstname'] . " " . $_POST['lastname'];
       $infoFile = pathinfo($_FILES['myFile']['name']);
       echo"<br> Nom du fichier : " . $_FILES['myFile']['name']. "<br>Extension : " . $infoFile['extension'];
-    } else{
-      echo '
+    } else{ ?>
       <form method="post" action="index.php" id="formIdentity" enctype="multipart/form-data">
         <fieldset class="identity">
           <legend> Identité </legend>
@@ -32,9 +31,8 @@
           <input type="submit" value="Valider" name="submitButton">
           <input type="button" value="Effacer" name="razButton" id="razButton">
         </fieldset>
-      </form>';
-    }
-  ?>
+      </form>
+    <?php } ?>
 
   <script>
       document.getElementById("razButton").addEventListener("click", function(){

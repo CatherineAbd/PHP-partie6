@@ -8,26 +8,35 @@
   <hr>
   <p class="topicTitle">Résultats</p>
 
+    <!-- autre méthode -->
+
   <?php
-    if (isset($_POST['firstname']) && isset($_POST['lastname'])){
-      echo "Bonjour " . $_POST['civility'] . " " . $_POST['firstname'] . " " . $_POST['lastname'];
-    } else{
-      echo '
+    var_dump($_POST);
+    if (isset($_POST['submitButton'])){ ?>
+      <ul>
+        <li><p>Civilité <?= $_POST['civility'] ?></p></li>
+        <li><p>Prénom <?= $_POST['firstname']?></p></li>
+        <li><p>Nom <?= $_POST['lastname'] ?></p></li>
+      </ul>
+      
+    <?php } else { ?>
       <form method="post" action="index.php" id="formIdentity">
-        <fieldset class="identity">
-          <legend> Identité </legend>
-          <select name="civility" id="civility">
-            <option value="M.">Monsieur</option>
-            <option value="Mme.">Madame</option>
-          </select>
-          <label for="firstname">Votre prénom</label><input type="text" name="firstname" id="firstname">
-          <label for="lastname">Votre nom</label><input type="text" name="lastname" id="lastname">
-          <input type="submit" value="Valider" name="submitButton">
-          <input type="button" value="Effacer" name="razButton" id="razButton">
-        </fieldset>
-      </form>';
-    }
-  ?>
+      <fieldset class="identity">
+        <legend> Identité </legend>
+        <select name="civility" id="civility">
+          <option disabled></option>
+          <option value="M.">Monsieur</option>
+          <option value="Mme.">Madame</option>
+        </select>
+        <label for="firstname">Votre prénom</label><input type="text" name="firstname" id="firstname">
+        <label for="lastname">Votre nom</label><input type="text" name="lastname" id="lastname">
+        <input type="submit" value="Valider" name="submitButton">
+        <input type="button" value="Effacer" name="razButton" id="razButton">
+      </fieldset>
+    </form>
+
+    <?php } ?>
+  
 
   <script>
       document.getElementById("razButton").addEventListener("click", function(){
