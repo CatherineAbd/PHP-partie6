@@ -8,11 +8,14 @@
   <p class="topicTitle">Résultats</p>
 
   <?php
-    if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_FILES['myFile']) && ($_FILES['myFile']['error'] == 0)){
+    if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_FILES["myFile"]) && ($_FILES["myFile"]["error"] == 0)){
     // if (isset($_POST['firstname']) && isset($_POST['lastname'])){
-      echo "Bonjour " . $_POST['civility'] . " " . $_POST['firstname'] . " " . $_POST['lastname'];
-      $infoFile = pathinfo($_FILES['myFile']['name']);
-      echo"<br> Nom du fichier : " . $_FILES['myFile']['name']. "<br>Extension : " . $infoFile['extension'];
+      echo "Bonjour " . $_POST["civility"] . " " . $_POST["firstname"] . " " . $_POST["lastname"];
+      $infoFile = pathinfo($_FILES["myFile"]["name"]);
+      echo"<br> Nom du fichier : " . $_FILES["myFile"]["name"]. "<br>Extension : " . $infoFile["extension"];
+      // Autre manière de récupérer l'extension
+      $imageInfos = explode("/", $_FILES["myFile"]["type"]);
+      var_dump($imageInfos);
     } else{ ?>
       <form method="post" action="index.php" id="formIdentity" enctype="multipart/form-data">
         <fieldset class="identity">

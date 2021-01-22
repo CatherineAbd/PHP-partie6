@@ -2,18 +2,18 @@
   include "..\\top_p6.php";
   echo "Exercice 8";
 ?>
-  <p class="topic">Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exercices précédent, vérifier que le fichier transmis est bien un fichier pdf.<br>
+  <p class="topic">Sur le formulaire de l"exercice 6, en plus de ce qui est demandé sur les exercices précédent, vérifier que le fichier transmis est bien un fichier pdf.<br>
   </p>
   <hr>
   <p class="topicTitle">Résultats</p>
 
   <?php
-    if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_FILES['myFile']) && ($_FILES['myFile']['error'] == 0)){
-      echo "Bonjour " . $_POST['civility'] . " " . $_POST['firstname'] . " " . $_POST['lastname'];
-      $infoFile = pathinfo($_FILES['myFile']['name']);
-      echo"<br> Nom du fichier : " . $_FILES['myFile']['name']. "<br>Type : " . $infoFile['extension'];
-      echo "<br> Type fichier " . $_FILES['myFile']['type'];
-      if ($infoFile['extension'] != 'pdf'){
+    if (!empty($_POST["firstname"]) && !empty($_POST["lastname"]) && !empty($_FILES["myFile"]) && ($_FILES["myFile"]["error"] == 0)){
+      echo "Bonjour " . $_POST["civility"] . " " . $_POST["firstname"] . " " . $_POST["lastname"];
+      $infoFile = pathinfo($_FILES["myFile"]["name"]);
+      echo"<br> Nom du fichier : " . $_FILES["myFile"]["name"]. "<br>Type : " . $infoFile["extension"];
+      echo "<br> Type fichier " . $_FILES["myFile"]["type"];
+      if ($infoFile["extension"] != "pdf"){
         echo "<br><br> <span style='color: red'> Le fichier doit être au format pdf </span>";
       }
     } else{ ?>

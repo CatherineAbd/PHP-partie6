@@ -23,8 +23,8 @@ A la soumission du formulaire, si tous les champs sont correctement renseignés,
     <fieldset class="identity">
       <legend> Identité </legend>
       <select name="civility" id="civility">
-        <option value="M.">Monsieur</option>
-        <option value="Mme.">Madame</option>
+        <option value="M." required>Monsieur</option>
+        <option value="Mme." required>Madame</option>
         </select>
         <label for="firstname">Votre prénom</label><input type="text" name="firstname" id="firstname" required>
         <label for="lastname">Votre nom</label><input type="text" name="lastname" id="lastname" required><br>
@@ -33,7 +33,7 @@ A la soumission du formulaire, si tous les champs sont correctement renseignés,
         <input type="submit" value="Valider" name="submitButton">
         <input type="button" value="Effacer" name="razButton" id="razButton">
         </fieldset>
-  </form>';
+  </form>
   <?php
   ?>
 
